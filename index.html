@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ChanakyaEMRdocs</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div class="container">
+		<div class="heading">
+		<center>
+			<h1><b>CHANAKYA EMR API DOCUMENTS</b></h1>
+			<br><br>
+		</center>
+		</div>
+		<div class="service01">
+			<center>
+			<h4>Service -01  <span>Currency Converter</span></h4>
+			<br>
+		</center>
+		<div class="">
+			<div class="">
+				<p><b>1. Set/Update currency details</b></p>
+		         <p>Request Parameters</p>
+		<ul>
+			<li>currency1 </li>
+			<li>currency2 </li>
+			<li>currency1_value</li>
+		</ul>
+		<p><b>Description:</b> In this service can insert new data or update existing data and gives JSON response</p>
+		<p>If data is present updates if not inserting as new value </p>
+		<p><b>End point:</b> http://....../setCurrencyValues? (Post method)</p>
+			</div>
+
+<hr>
+			<div class="">
+				<p><b>2. Convert currency</b></p>
+		         <p>Request Parameters</p>
+		<ul>
+			<li>currency1 </li>
+			<li>currency2 </li>
+			<li>currency1_value</li>
+		</ul>
+		<p><b>Description:</b> In this service it will convert the user entered currency1 amount with the currency1_value and gives currency2 value as a JSON response</p>
+		<p><b>End point:</b> http://....../getCurrencyValue? (Post method)</p>
+			</div>
+<hr>
+			<div class="">
+				<p><b>3. Convert all currency units present in database</b></p>
+		         <p>Request Parameters</p>
+		<ul>
+			<li>currency1 </li>
+			<li>currency1_value</li>
+		</ul>
+		<p><b>Description:</b> This service convert user entered currency1 amount with the all currency1_value present in the database and gives currency2 value as a JSON response.</p>
+		<p><b>End point:</b> http://....../getAllCurrencyValue? (Post method)</p>
+			</div>
+<hr>
+			<div class="">
+				<p><b>4. Get all currency details present in database</b></p>
+		         <p>Request Parameters</p>
+		<ul>
+			<li>No parameter</li>
+		</ul>
+		<p><b>Description:</b> This service gives list of all currency details.</p>
+		<p><b>End point:</b> http://....../getAllCurrecyDetails? (Get method)</p>
+			</div>
+		</div>
+		</div>
+		
+	</div>
+</body>
+</html>
