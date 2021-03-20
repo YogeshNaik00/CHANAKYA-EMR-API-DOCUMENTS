@@ -22,50 +22,94 @@
 		</center>
 		<div class="">
 			<div class="">
-				<p><b>1. Set/Update currency details</b></p>
-		         <p>Request Parameters</p>
-		<ul>
-			<li>currency1 </li>
-			<li>currency2 </li>
-			<li>currency1_value</li>
-		</ul>
-		<p><b>Description:</b> In this service can insert new data or update existing data and gives JSON response</p>
-		<p>If data is present updates if not inserting as new value </p>
-		<p><b>End point:</b> http://....../setCurrencyValues? (Post method)</p>
+				<p><b>1. Set/Update currency details </b>- http://....../setCurrencyValues? </p>
+		         <p>Request:  {String, String, float} (currency1, currency2, currency1_value)</p>
+
+		         Response: <code>
+		         	{
+ "status": "Success"
+}
+		         </code>
 			</div>
 
 <hr>
+
+
 			<div class="">
-				<p><b>2. Convert currency</b></p>
-		         <p>Request Parameters</p>
-		<ul>
-			<li>currency1 </li>
-			<li>currency2 </li>
-			<li>currency1_value</li>
-		</ul>
-		<p><b>Description:</b> In this service it will convert the user entered currency1 amount with the currency1_value and gives currency2 value as a JSON response</p>
-		<p><b>End point:</b> http://....../getCurrencyValue? (Post method)</p>
+				<p><b>2. Convert currency</b> - http://....../getCurrencyValue? </p>
+		         <p>Request:  {String, String, float} (currency1, currency2, currency1_value)</p>
+		         Response: 
+		         <code>
+		         	{
+                     currency1: "INR",
+                     currency2: "USD",
+                     outputCurrencyValue: 1.2456747,
+                     currencyUnit: "USD"
+                    }
+		         </code>
+			</div>
+<hr>
+
+
+
+			<div class="">
+				<p><b>3. Convert all currency units present in database</b> - http://....../getAllCurrencyValue? </p>
+		         <p>Request {String,  float} (currency1, currency1_value)</p>
+		          Response:
+		          <code>
+		          	[
+						{
+						currency1: "INR",
+						currency2: "USD",
+						outputCurrencyValue: 0.9688581,
+						currencyUnit: "USD"
+						},
+						{
+						currency1: "INR",
+						currency2: "EUR",
+						outputCurrencyValue: 0.81065434,
+						currencyUnit: "EUR"
+						},
+						{
+						currency1: "INR",
+						currency2: "YEN",
+						outputCurrencyValue: 189.1892,
+						currencyUnit: "YEN"
+						}
+					]
+		          </code>
+	
+		
 			</div>
 <hr>
 			<div class="">
-				<p><b>3. Convert all currency units present in database</b></p>
-		         <p>Request Parameters</p>
-		<ul>
-			<li>currency1 </li>
-			<li>currency1_value</li>
-		</ul>
-		<p><b>Description:</b> This service convert user entered currency1 amount with the all currency1_value present in the database and gives currency2 value as a JSON response.</p>
-		<p><b>End point:</b> http://....../getAllCurrencyValue? (Post method)</p>
-			</div>
-<hr>
-			<div class="">
-				<p><b>4. Get all currency details present in database</b></p>
-		         <p>Request Parameters</p>
-		<ul>
-			<li>No parameter</li>
-		</ul>
-		<p><b>Description:</b> This service gives list of all currency details.</p>
-		<p><b>End point:</b> http://....../getAllCurrecyDetails? (Get method)</p>
+				<p><b>4. Get all currency details present in database</b> - http://....../getAllCurrencyDetails?</p>
+		         <p>Request - no parameter</p>
+		         Response:
+		         <code>
+		         	[
+						{
+						id: 1,
+						currency1: "INR",
+						currency2: "USD",
+						currency1_value: 72.25
+						},
+						{
+						id: 2,
+						currency1: "INR",
+						currency2: "EUR",
+						currency1_value: 86.35
+						},
+						{
+						id: 3,
+						currency1: "INR",
+						currency2: "YEN",
+						currency1_value: 0.37
+						}
+					]
+		         </code>
+	
+
 			</div>
 		</div>
 		</div>
